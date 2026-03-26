@@ -1,6 +1,18 @@
+/* ==========================
+   ESTILOS GENERALES
+========================== */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-image: url('https://https://img.freepik.com/fotos-premium/inteligencia-artificial-generada-ia-inteligencia-artificial-generativa-ai-ciencia-redes-datos-bluew-programacion-futuro-fondo-cibernetico-patron-textura-arte-grafico_1080685-5595.jpg?w=2000.mm.bing.net/th/id/OIP.TmkLnrxOQPBZIMCZFLNmIAHaEJ?rs=1&pid=ImgDetMain&o=7&rm=3');
+    background-size: cover;
+    /* cubrir toda la pantalla */
+    background-position: center;
+    /* centrar la imagen */
+    background-repeat: no-repeat;
+    /* no repetir */
+    background-attachment: fixed;
+    /* efecto parallax al hacer scroll */
+
     color: #333;
     display: flex;
     flex-direction: column;
@@ -8,39 +20,62 @@ body {
     justify-content: center;
     min-height: 100vh;
     margin: 0;
+    font-size: 25px;
 }
 
 header {
     margin-bottom: 30px;
     text-align: center;
-}
-
-h1 {
-    color: #007bff;
-}
-
-.timeline-container {
     width: 80%;
-    max-width: 800px;
-    height: 400px;
-    /* Altura fija para el contenedor */
     position: relative;
     overflow: hidden;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #6C5CE7;
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+    /* sombra morada */
     border-radius: 10px;
     padding: 20px;
     box-sizing: border-box;
 }
 
+h1 {
+    color: #ffffff;
+    /* morado principal */
+}
+
+/* ==========================
+   CONTENEDOR TIMELINE
+========================== */
+.timeline-container {
+    width: 80%;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 6px 15px rgba(108, 92, 231, 0.2);
+    /* sombra morada */
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+}
+
+.timeline-container:hover {
+    box-shadow: 0 10px 25px rgba(108, 92, 231, 0.25);
+}
+
+/* ==========================
+   EVENTOS
+========================== */
 .timeline-event {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
-    left: 100%;
+    left: 0;
     opacity: 0;
-    transition: left 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    transform: translateX(100%);
+    transition: transform 1s ease, opacity 1s ease;
+    /* transición lenta */
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -48,31 +83,60 @@ h1 {
     justify-content: center;
 }
 
-.timeline-event.active{
-   left:0;
-   opacity: 1;
+/* Activo (visible) */
+.timeline-event.active {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-.timeline-event h2{
-    color: #007bff;
+/* Sale hacia la izquierda */
+.timeline-event.to-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+/* Sale hacia la derecha */
+.timeline-event.to-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.timeline-event h2 {
+    color: #6C5CE7;
+    /* morado principal */
     margin-top: 0;
 }
 
-.timeline-date{
+.timeline-date {
     display: block;
     font-style: italic;
-    color: #666;
+    color: #7a7a9a;
+    /* gris suave */
     margin-bottom: 15px;
 }
 
-.timeline-navigation{
+.timeline-img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+    /* sombra morada */
+}
+
+/* ==========================
+   NAVEGACIÓN
+========================== */
+.timeline-navigation {
     margin-top: 20px;
-    display:flex;
+    display: flex;
     gap: 10px;
 }
 
-.timeline-navigation button{
-    background-color: #007bff;
+.timeline-navigation button {
+    background-color: #6C5CE7;
+    /* morado */
     color: white;
     border: none;
     border-radius: 50%;
@@ -83,12 +147,30 @@ h1 {
     transition: background-color 0.3s;
 }
 
-
-.timeline-navigation button:hover{
-    background-color: #0056b3;
+.timeline-navigation button:hover {
+    background-color: #4B3FCF;
+    /* morado oscuro */
 }
 
-.timeline-navigation button:disabled{
-    background-color: #ccc;
+.timeline-navigation button:disabled {
+    background-color: #d1cfff;
+    /* morado muy suave */
+}
 
+.title {
+    font-size: 50px;
+}
+
+.footer{
+    margin-bottom: 30px;
+    text-align: center;
+     width: 80%;
+    position: relative;
+    overflow: hidden;
+    background-color: #6C5CE7;
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+    /* sombra morada */
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
 }
